@@ -10,6 +10,7 @@ from scao_live.duration import DurationParseError, parse_duration
 # Valid inputs
 # ---------------------------------------------------------------------------
 
+
 class TestValidDurations:
     @pytest.mark.parametrize(
         "text, expected_ms",
@@ -75,37 +76,38 @@ class TestValidDurations:
 # Invalid inputs
 # ---------------------------------------------------------------------------
 
+
 class TestInvalidDurations:
     @pytest.mark.parametrize(
         "text",
         [
-            "",            # empty string
-            "   ",         # whitespace only
-            "\t\n",        # whitespace only
-            "s",           # missing number
-            "ms",          # missing number
-            "m",           # missing number
-            "h",           # missing number
-            "5",           # missing unit
-            "10",          # missing unit
-            "5S",          # uppercase unit
-            "5MS",         # uppercase unit
-            "5H",          # uppercase unit
-            "5M",          # uppercase unit
-            "5x",          # unknown unit
-            "5sec",        # unknown unit
-            "5min",        # unknown unit
-            "-5s",         # negative
-            "-1ms",        # negative
-            "-1h",         # negative
-            "1.5s",        # decimal
-            "0.5ms",       # decimal
-            "2.0h",        # decimal
-            "5 s",         # internal space
-            "5 ms",        # internal space
-            "abc",         # no digits at all
-            "5m5s",        # compound / trailing characters
-            "5ms5",        # trailing characters after valid unit
+            "",  # empty string
+            "   ",  # whitespace only
+            "\t\n",  # whitespace only
+            "s",  # missing number
+            "ms",  # missing number
+            "m",  # missing number
+            "h",  # missing number
+            "5",  # missing unit
+            "10",  # missing unit
+            "5S",  # uppercase unit
+            "5MS",  # uppercase unit
+            "5H",  # uppercase unit
+            "5M",  # uppercase unit
+            "5x",  # unknown unit
+            "5sec",  # unknown unit
+            "5min",  # unknown unit
+            "-5s",  # negative
+            "-1ms",  # negative
+            "-1h",  # negative
+            "1.5s",  # decimal
+            "0.5ms",  # decimal
+            "2.0h",  # decimal
+            "5 s",  # internal space
+            "5 ms",  # internal space
+            "abc",  # no digits at all
+            "5m5s",  # compound / trailing characters
+            "5ms5",  # trailing characters after valid unit
         ],
     )
     def test_invalid_string_raises(self, text):

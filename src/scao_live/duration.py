@@ -49,9 +49,7 @@ def parse_duration(s: str) -> int:
         unit.
     """
     if not isinstance(s, str):
-        raise DurationParseError(
-            f"expected a string, got {type(s).__name__}"
-        )
+        raise DurationParseError(f"expected a string, got {type(s).__name__}")
 
     text = s.strip()
     if not text:
@@ -78,8 +76,7 @@ def parse_duration(s: str) -> int:
 
     if unit not in _UNITS_TO_MS:
         raise DurationParseError(
-            f"unsupported unit {unit!r}; "
-            f"expected one of {sorted(_UNITS_TO_MS)}"
+            f"unsupported unit {unit!r}; expected one of {sorted(_UNITS_TO_MS)}"
         )
 
     # int() handles leading zeros; the value is guaranteed nonnegative
