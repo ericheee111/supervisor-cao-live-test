@@ -9,3 +9,8 @@ requires-python = ">=3.10"
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+# ``src`` layout: ensure tests import the in-worktree package instead of a
+# possibly stale editable install pointing at a different worktree.
+pythonpath = ["src"]
