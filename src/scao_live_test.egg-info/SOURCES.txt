@@ -1,0 +1,8 @@
+pyproject.toml
+src/scao_live/__init__.py
+src/scao_live_test.egg-info/PKG-INFO
+src/scao_live_test.egg-info/SOURCES.txt
+src/scao_live_test.egg-info/dependency_links.txt
+src/scao_live_test.egg-info/requires.txt
+src/scao_live_test.egg-info/top_level.txt
+tests/test_smoke.py
